@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="20250531_crop_top_down"
+run/main_scene="uid://d34m0r2u3ttnx"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
