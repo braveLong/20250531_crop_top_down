@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://b2ad8f6a0pt1a" path="res://assets/game/characters/free_chicken_sprites.png" id="1_awcwn"]
 [ext_resource type="Script" uid="uid://du1s5erkjyxm" path="res://scenes/characters/chicken/chicken.gd" id="1_r6a33"]
 [ext_resource type="Script" uid="uid://djnb6vjyaplml" path="res://scripts/state_machine/node_state_machine.gd" id="2_31inw"]
-[ext_resource type="Script" uid="uid://m284pf7n77lk" path="res://scenes/characters/chicken/idle_state.gd" id="3_r6a33"]
-[ext_resource type="Script" uid="uid://bl14mi8q64h0u" path="res://scenes/characters/chicken/walk_state.gd" id="4_31inw"]
+[ext_resource type="Script" uid="uid://m284pf7n77lk" path="res://scenes/characters/npc_state/idle_state.gd" id="3_r6a33"]
+[ext_resource type="Script" uid="uid://bl14mi8q64h0u" path="res://scenes/characters/npc_state/walk_state.gd" id="4_31inw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asyyu"]
 atlas = ExtResource("1_awcwn")
@@ -62,7 +62,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_73xul"]
-radius = 4.0
+radius = 5.0
 
 [node name="Chicken" type="CharacterBody2D"]
 script = ExtResource("1_r6a33")
@@ -75,12 +75,12 @@ autoplay = "idle"
 frame_progress = 0.71491
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(-1, -5)
 shape = SubResource("CircleShape2D_73xul")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 avoidance_enabled = true
-radius = 4.0
+radius = 5.0
 debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
