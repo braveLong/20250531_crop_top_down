@@ -14,6 +14,8 @@ func _ready() -> void:
 
 func character_setup() -> void:
 	await get_tree().physics_frame
+	# 多等待一帧保证导航系统完全初始化
+	await get_tree().physics_frame
 	
 	set_movement_target()
 
